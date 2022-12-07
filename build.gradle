@@ -1,0 +1,52 @@
+plugins {
+    id 'java-library'
+}
+
+group 'qa.guru'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            'org.junit.jupiter:junit-jupiter-api:5.8.1',
+            'com.codeborne:selenide:6.9.0',
+            'com.codeborne:pdf-test:1.5.0',
+            'com.codeborne:xls-test:1.4.3',
+            'com.opencsv:opencsv:5.7.1',
+            'com.google.code.gson:gson:2.10',
+            'com.fasterxml.jackson.core:jackson-core:2.13.1',
+            'com.fasterxml.jackson.core:jackson-databind:2.14.1',
+            'org.assertj:assertj-core:3.23.1',
+            'org.projectlombok:lombok:1.18.24'
+    )
+    testAnnotationProcessor (
+            'org.projectlombok:lombok:1.18.24'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
+help {
+    doFirst {
+        println ""
+        println "************************************************************************ "
+        println "***                                                                  *** "
+        println "*** Welcome to https://github.com/VolishevskiyVG/hw_automation-practice-form!   *** "
+        println "***                                                                  *** "
+        println "*** ./gradlew help                                                    *** "
+        println "***                                                                  *** "
+        println "************************************************************************ "
+        println ""
+    }
+}
+sourceCompatibility = JavaVersion.VERSION_1_9
+targetCompatibility = JavaVersion.VERSION_1_9
