@@ -1,8 +1,6 @@
 package guru.qa;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.FileDownloadMode;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -33,7 +31,7 @@ public class SelenideFilesTest {
     }
 
     @Test
-    void selenideUploadFile(){
+    void selenideUploadFile() {
         open("https://fineuploader.com/demos.html");
         $("input[type='file']").uploadFromClasspath("memIronMan.jpg");
         $("div.qq-file-info").shouldHave(Condition.text("memIronMan.jpg"));
